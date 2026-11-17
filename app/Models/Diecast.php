@@ -19,23 +19,31 @@ class Diecast extends Model
         'gambar',
         'skala',
         'stok',
+        'harga',
     ];
 
     protected $appends = [
         'gambar_url',
+        'effective_harga',
+        'harga_formatted',
     ];
 
     protected function casts(): array
     {
         return [
             'stok' => 'integer',
+            'harga' => 'integer',
         ];
     }
 
     public function getGambarUrlAttribute(): string
     {
-        if ($this->gambar && file_exists(public_path('images/hotwheels/' . $this->gambar))) {
-            return asset('images/hotwheels/' . $this->gambar);
+        if ($this->gambar && file_exists(public_path('images/hotwheels/'.$this->gambar))) {
+            return asset('images/hotwheels/'.$this->gambar);
+        }
+
+        if ($this->gambar && file_exists(public_path('storage/'.$this->gambar))) {
+            return asset('storage/'.$this->gambar);
         }
 
         // Mapping fallback based on model name keywords
@@ -66,6 +74,38 @@ class Diecast extends Model
         }
 
         return asset('images/hotwheels/skyline-r34.jpg');
+    }
+
+    public function getEffectiveHargaAttribute(): int
+    {
+        if ($this->harga > 0) {
+            return (int) $this->harga;
+        }
+
+        $katNama = $this->kategori->nama ?? 'Umum';
+        $price = 45000;
+        if ($this->skala === '1:64') {
+            if (str_contains(strtolower($katNama), 'jdm')) {
+                $price = 75000;
+            } elseif (str_contains(strtolower($katNama), 'muscle')) {
+                $price = 55000;
+            } elseif (str_contains(strtolower($katNama), 'supercar')) {
+                $price = 85000;
+            } elseif (str_contains(strtolower($katNama), 'off-road')) {
+                $price = 50000;
+            }
+        } elseif ($this->skala === '1:43') {
+            $price = 185000;
+        } elseif ($this->skala === '1:18') {
+            $price = 650000;
+        }
+
+        return $price;
+    }
+
+    public function getHargaFormattedAttribute(): string
+    {
+        return 'Rp '.number_format($this->effective_harga, 0, ',', '.');
     }
 
     public function kategori(): BelongsTo

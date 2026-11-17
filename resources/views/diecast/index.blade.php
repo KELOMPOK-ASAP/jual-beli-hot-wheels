@@ -1138,6 +1138,246 @@
                 justify-content: center;
             }
         }
+
+        /* Action buttons for CRUD */
+        .btn-create-nav {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: #ffffff !important;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.45rem 0.95rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.25);
+            transition: all 0.2s;
+        }
+
+        .btn-create-nav:hover {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary-action {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 800;
+            padding: 0.65rem 1.25rem;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 3px 10px rgba(220, 38, 38, 0.25);
+            transition: all 0.2s;
+        }
+
+        .btn-primary-action:hover {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            transform: translateY(-1px);
+            color: #ffffff;
+        }
+
+        .btn-secondary-action {
+            background: #ffffff;
+            border: 1.5px solid var(--border);
+            color: var(--dark);
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 0.6rem 1.15rem;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary-action:hover {
+            border-color: #94a3b8;
+            background: #f8fafc;
+        }
+
+        /* Alert Notifications */
+        .alert {
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .alert-success {
+            background: #dcfce7;
+            border: 1px solid #bbf7d0;
+            color: #166534;
+        }
+
+        .alert-error {
+            background: #fee2e2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+        }
+
+        .alert-close {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: inherit;
+            line-height: 1;
+        }
+
+        /* Card CRUD Action Buttons */
+        .card-actions-wrapper {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .btn-edit {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            color: var(--dark);
+            padding: 0.55rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .btn-edit:hover {
+            background: #e2e8f0;
+            border-color: #94a3b8;
+        }
+
+        .btn-delete {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+            padding: 0.55rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-delete:hover {
+            background: #fee2e2;
+            border-color: #fca5a5;
+        }
+
+        .btn-edit-sm {
+            padding: 0.35rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: var(--dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .btn-edit-sm:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+
+        .btn-delete-sm {
+            padding: 0.35rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid #fecaca;
+            background: #fef2f2;
+            color: #dc2626;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-delete-sm:hover {
+            background: #fee2e2;
+            border-color: #fca5a5;
+        }
+
+        .btn-login-nav {
+            background: #ffffff;
+            border: 1.5px solid var(--border);
+            color: var(--dark);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.45rem 0.95rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: all 0.2s;
+        }
+
+        .btn-login-nav:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .badge-role-admin {
+            background: #fef3c7;
+            border: 1px solid #fde68a;
+            color: #b45309;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .badge-role-user {
+            background: #e0f2fe;
+            border: 1px solid #bae6fd;
+            color: #0369a1;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .btn-logout {
+            background: none;
+            border: 1px solid #e2e8f0;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.35rem 0.7rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-logout:hover {
+            background: #fee2e2;
+            border-color: #fca5a5;
+            color: var(--primary);
+        }
     </style>
 </head>
 <body>
@@ -1154,12 +1394,49 @@
         <nav class="nav-links">
             <a href="{{ url('/') }}" class="nav-link">Beranda</a>
             <a href="{{ route('diecast.index') }}" class="nav-link active">Katalog Hot Wheels</a>
+
+            @if (auth()->check() && auth()->user()->isAdmin())
+                <a href="{{ route('kategori.index') }}" class="nav-link">Kategori</a>
+                <a href="{{ route('diecast.create') }}" class="btn-create-nav">+ Tambah Diecast</a>
+            @endif
+
+            @auth
+                @if (auth()->user()->isAdmin())
+                    <span class="badge-role-admin">👑 Admin: {{ auth()->user()->name }}</span>
+                @else
+                    <span class="badge-role-user">👤 {{ auth()->user()->name }}</span>
+                @endif
+
+                <form action="{{ route('logout') }}" method="POST" style="margin: 0;">
+                    @csrf
+                    <button type="submit" class="btn-logout" title="Keluar dari akun">Keluar</button>
+                </form>
+            @else
+                <a href="{{ route('login') }}" class="btn-login-nav">
+                    <span>🔐</span>
+                    <span>Masuk / Login</span>
+                </a>
+            @endauth
         </nav>
     </header>
 
     <!-- Main Container -->
     <main class="container">
         
+        @if (session('success'))
+            <div class="alert alert-success">
+                <span>✅ {{ session('success') }}</span>
+                <button type="button" class="alert-close" onclick="this.parentElement.remove()">&times;</button>
+            </div>
+        @endif
+
+        @if (session('error'))
+            <div class="alert alert-error">
+                <span>⚠️ {{ session('error') }}</span>
+                <button type="button" class="alert-close" onclick="this.parentElement.remove()">&times;</button>
+            </div>
+        @endif
+
         <!-- Header Section -->
         <div class="header-section">
             <div class="header-title">
@@ -1169,6 +1446,24 @@
                 </h2>
                 <p>Pusat jual beli miniatur mobil Hot Wheels original: foto asli studio, seri Mainline, JDM, Muscle Car, Car Culture, hingga Super Treasure Hunt.</p>
             </div>
+            @if (auth()->check() && auth()->user()->isAdmin())
+                <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+                    <a href="{{ route('kategori.index') }}" class="btn-secondary-action">
+                        <span>🏷️</span>
+                        <span>Kelola Kategori</span>
+                    </a>
+                    <a href="{{ route('diecast.create') }}" class="btn-primary-action">
+                        <span>➕</span>
+                        <span>Tambah Diecast</span>
+                    </a>
+                </div>
+            @else
+                <div style="display: flex; gap: 0.6rem; align-items: center;">
+                    <span style="font-size: 0.85rem; color: #166534; background: #dcfce7; padding: 0.4rem 0.85rem; border-radius: 20px; font-weight: 700; border: 1px solid #bbf7d0;">
+                        ✓ Mode Pembeli / Kolektor
+                    </span>
+                </div>
+            @endif
         </div>
 
         <!-- 4 Quick Stats Cards -->
@@ -1426,10 +1721,29 @@
 
                     <!-- Card Footer Action -->
                     <div class="card-footer">
-                        <button class="btn-buy" type="button" data-id="{{ $item->id }}" onclick="openDetailFromBtn(this)">
-                            <span>🛒</span>
-                            <span>Beli / Detail Unit</span>
-                        </button>
+                        @if (auth()->check() && auth()->user()->isAdmin())
+                            <div class="card-actions-wrapper">
+                                <button class="btn-buy" style="flex: 1;" type="button" data-id="{{ $item->id }}" onclick="openDetailFromBtn(this)">
+                                    <span>🛒</span>
+                                    <span>Detail</span>
+                                </button>
+                                <a href="{{ route('diecast.edit', $item) }}" class="btn-edit" title="Edit Diecast">
+                                    <span>✏️</span>
+                                </a>
+                                <form action="{{ route('diecast.destroy', $item) }}" method="POST" style="margin: 0;" onsubmit="return confirm('Hapus diecast {{ addslashes($item->nama_diecast) }}?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn-delete" title="Hapus Diecast">
+                                        <span>🗑️</span>
+                                    </button>
+                                </form>
+                            </div>
+                        @else
+                            <button class="btn-buy" type="button" data-id="{{ $item->id }}" onclick="openDetailFromBtn(this)">
+                                <span>🛒</span>
+                                <span>Beli / Detail Unit</span>
+                            </button>
+                        @endif
                     </div>
                 </div>
             @endforeach
@@ -1448,7 +1762,11 @@
                             <th>Harga Jual</th>
                             <th>Stok Ready</th>
                             <th>Kondisi Card</th>
-                            <th style="text-align: right;">Beli</th>
+                            @if (auth()->check() && auth()->user()->isAdmin())
+                                <th style="text-align: right; min-width: 140px;">Aksi Admin</th>
+                            @else
+                                <th style="text-align: right;">Beli</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -1503,9 +1821,27 @@
                                 </span>
                             </td>
                             <td style="text-align: right;">
-                                <button class="btn-buy" style="padding: 0.4rem 0.85rem; font-size: 0.8rem;" type="button" data-id="{{ $item->id }}" onclick="openDetailFromBtn(this)">
-                                    Beli
-                                </button>
+                                @if (auth()->check() && auth()->user()->isAdmin())
+                                    <div style="display: flex; gap: 0.35rem; justify-content: flex-end; align-items: center;">
+                                        <button class="btn-buy" style="padding: 0.35rem 0.65rem; font-size: 0.78rem;" type="button" data-id="{{ $item->id }}" onclick="openDetailFromBtn(this)">
+                                            Beli
+                                        </button>
+                                        <a href="{{ route('diecast.edit', $item) }}" class="btn-edit-sm" title="Edit Diecast">
+                                            ✏️
+                                        </a>
+                                        <form action="{{ route('diecast.destroy', $item) }}" method="POST" style="margin: 0;" onsubmit="return confirm('Hapus diecast {{ addslashes($item->nama_diecast) }}?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn-delete-sm" title="Hapus Diecast">
+                                                🗑️
+                                            </button>
+                                        </form>
+                                    </div>
+                                @else
+                                    <button class="btn-buy" style="padding: 0.4rem 0.85rem; font-size: 0.8rem;" type="button" data-id="{{ $item->id }}" onclick="openDetailFromBtn(this)">
+                                        Beli
+                                    </button>
+                                @endif
                             </td>
                         </tr>
                         @endforeach

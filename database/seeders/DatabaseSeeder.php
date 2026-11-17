@@ -16,12 +16,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // 1. Buat User Admin Demo
-        User::firstOrCreate(
+        // 1. Buat Akun Demo Admin & User Biasa
+        $admin = User::firstOrCreate(
             ['email' => 'admin@diecasthub.test'],
             [
                 'name' => 'Admin DiecastHub',
                 'password' => bcrypt('password123'),
+                'role' => 'admin',
+            ]
+        );
+        if ($admin->role !== 'admin') {
+            $admin->update(['role' => 'admin']);
+        }
+
+        User::firstOrCreate(
+            ['email' => 'user@diecasthub.test'],
+            [
+                'name' => 'Pengguna Kolektor',
+                'password' => bcrypt('password123'),
+                'role' => 'user',
             ]
         );
 
@@ -35,42 +48,42 @@ class DatabaseSeeder extends Seeder
         // 3. Buat Data Diecast
         $skyline = Diecast::firstOrCreate(
             ['nama_diecast' => 'Nissan Skyline GT-R (R34) V-Spec II'],
-            ['kategori_id' => $kategoriJdm->id, 'skala' => '1:64', 'stok' => 5, 'gambar' => 'skyline-r34.jpg']
+            ['kategori_id' => $kategoriJdm->id, 'skala' => '1:64', 'stok' => 5, 'harga' => 75000, 'gambar' => 'skyline-r34.jpg']
         );
 
         $supra = Diecast::firstOrCreate(
             ['nama_diecast' => 'Toyota Supra MK4 RZ Twin Turbo'],
-            ['kategori_id' => $kategoriJdm->id, 'skala' => '1:64', 'stok' => 4, 'gambar' => 'supra-mk4.jpg']
+            ['kategori_id' => $kategoriJdm->id, 'skala' => '1:64', 'stok' => 4, 'harga' => 75000, 'gambar' => 'supra-mk4.jpg']
         );
 
         $charger = Diecast::firstOrCreate(
             ['nama_diecast' => '1969 Dodge Charger R/T 426 Hemi'],
-            ['kategori_id' => $kategoriMuscle->id, 'skala' => '1:64', 'stok' => 6, 'gambar' => 'dodge-charger-1969.jpg']
+            ['kategori_id' => $kategoriMuscle->id, 'skala' => '1:64', 'stok' => 6, 'harga' => 55000, 'gambar' => 'dodge-charger-1969.jpg']
         );
 
         Diecast::firstOrCreate(
             ['nama_diecast' => '1967 Ford Mustang Shelby GT500 "Eleanor"'],
-            ['kategori_id' => $kategoriMuscle->id, 'skala' => '1:43', 'stok' => 3, 'gambar' => 'mustang-eleanor-1967.jpg']
+            ['kategori_id' => $kategoriMuscle->id, 'skala' => '1:43', 'stok' => 3, 'harga' => 185000, 'gambar' => 'mustang-eleanor-1967.jpg']
         );
 
         Diecast::firstOrCreate(
             ['nama_diecast' => 'Porsche 911 GT3 RS (992)'],
-            ['kategori_id' => $kategoriSuper->id, 'skala' => '1:43', 'stok' => 2, 'gambar' => 'porsche-911-gt3rs.jpg']
+            ['kategori_id' => $kategoriSuper->id, 'skala' => '1:43', 'stok' => 2, 'harga' => 185000, 'gambar' => 'porsche-911-gt3rs.jpg']
         );
 
         Diecast::firstOrCreate(
             ['nama_diecast' => 'Ferrari F40 Lightweight Edition'],
-            ['kategori_id' => $kategoriSuper->id, 'skala' => '1:18', 'stok' => 1, 'gambar' => 'ferrari-f40.jpg']
+            ['kategori_id' => $kategoriSuper->id, 'skala' => '1:18', 'stok' => 1, 'harga' => 650000, 'gambar' => 'ferrari-f40.jpg']
         );
 
         Diecast::firstOrCreate(
             ['nama_diecast' => 'Mercedes-Benz 300 SL Gullwing 1954'],
-            ['kategori_id' => $kategoriClassic->id, 'skala' => '1:18', 'stok' => 2, 'gambar' => 'mercedes-300sl.jpg']
+            ['kategori_id' => $kategoriClassic->id, 'skala' => '1:18', 'stok' => 2, 'harga' => 650000, 'gambar' => 'mercedes-300sl.jpg']
         );
 
         Diecast::firstOrCreate(
             ['nama_diecast' => 'Land Rover Defender 90 Heritage Trophy'],
-            ['kategori_id' => $kategoriOffroad->id, 'skala' => '1:64', 'stok' => 8, 'gambar' => 'defender-90.jpg']
+            ['kategori_id' => $kategoriOffroad->id, 'skala' => '1:64', 'stok' => 8, 'harga' => 50000, 'gambar' => 'defender-90.jpg']
         );
 
         // 4. Buat Data Anggota Komunitas

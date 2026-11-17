@@ -37,4 +37,3 @@ class Peminjaman extends Model
         return $this->belongsTo(Anggota::class, 'anggota_id');
     }
 }
-

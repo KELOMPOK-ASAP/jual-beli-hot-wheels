@@ -302,9 +302,17 @@
             </div>
         </a>
         <div class="nav-links">
-            <a href="{{ route('diecast.index') }}" class="btn-cta">
-                Belanja Hot Wheels &rarr;
-            </a>
+            <a href="{{ route('diecast.index') }}" class="nav-link" style="color: #cbd5e1;">Katalog</a>
+            @auth
+                <a href="{{ route('diecast.index') }}" class="btn-cta">
+                    Dashboard {{ auth()->user()->isAdmin() ? 'Admin' : 'Kolektor' }} &rarr;
+                </a>
+            @else
+                <a href="{{ route('login') }}" class="nav-link" style="color: #cbd5e1;">Login</a>
+                <a href="{{ route('diecast.index') }}" class="btn-cta">
+                    Belanja Hot Wheels &rarr;
+                </a>
+            @endauth
         </div>
     </header>
 

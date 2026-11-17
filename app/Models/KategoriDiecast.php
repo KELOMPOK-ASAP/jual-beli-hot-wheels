@@ -21,4 +21,3 @@ class KategoriDiecast extends Model
         return $this->hasMany(Diecast::class, 'kategori_id');
     }
 }
-
